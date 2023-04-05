@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Add Band review</title>
+
+<link type="text/css"
+	th:href="@{/styles/styles.css}" rel="stylesheet" />
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" th:href="@{/list}">List of Album Reviews</a>
+				<a class="navbar-brand" href="#" th:href="@{/Bandlist}">List of Band Reviews</a>
+				<a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+				<a class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>			
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+
+		<h3>Add New Band Review</h3>
+<hr>
+		<form th:action="@{/saveBandReview}" th:object="${bandReview}" method="POST">
+			<input type="text" th:field="*{name}" class="form-control col-4 mb-4" placeholder="Enter Name" />
+			<input type="text" th:field="*{review}" class="form-control col-4 mb-4" placeholder="Enter Review" /> 
+			<input type="text" th:field="*{NumOfRecordsOwned}" class="form-control col-4 mb-4" placeholder="Enter Number of Albums Owned" /> 
+			<div class="center"> 
+			<button type="submit" class="button">Save</button>
+			</div>
+			<input type="hidden" th:field="*{id}" />
+			
+		</form>
+		<hr />
+		<a th:href="@{/Bandlist}">Back to Band list</a>
+	</div>
+
+</body>
+</html>

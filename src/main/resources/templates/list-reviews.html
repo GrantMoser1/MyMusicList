@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>List Reivews</title>
+
+<link type="text/css"
+	th:href="@{/styles/styles.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" th:href="@{/list}">List of Album Reviews</a>
+				<a class="navbar-brand" href="#" th:href="@{/Bandlist}">List of Band Reviews</a>
+				<a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+				<a class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>			
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+
+		<h3>List Album Reviews</h3>
+
+		<hr />
+		<div class="center"> 
+		<a th:href="@{/addReviewForm}" class="btn btn-primary">Add Album Review</a> <br />
+		</div>
+		<br />
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Band Name</th>
+					<th>Review</th>
+					<th>Score</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="review: ${reviews}">
+					<td th:text="${review.name}" /></td>
+					<td th:text="${review.Bandname}" /></td>
+					<td th:text="${review.albumReview}" /></td>
+					<td th:text="${review.score}" /></td>
+					<td><a th:href="@{/showUpdateForm(reviewId=${review.id})}" class="btn btn-info">Update</a>
+					<a th:href="@{/deleteAlbumReview/{id}(id=${review.id})}" class="btn btn-danger">Delete</a></td>
+				</tr>
+
+			</tbody>
+
+		</table>
+	</div>
+
+
+</body>
+
+</html>

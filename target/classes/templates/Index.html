@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link type="text/css" th:href="@{/styles/styles.css}" rel="stylesheet" />
+
+<title>Registration</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" th:href="@{/list}">List of
+					Album Reviews</a> <a class="navbar-brand" href="#"
+					th:href="@{/Bandlist}">List of Band Reviews</a> <a
+					class="navbar-brand" href="#" th:href="@{/}">Home</a> <a
+					class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+	<div class="container">
+		<h2></h2>
+
+		<p>
+			Welcome <span sec:authentication="principal.username">User</span>
+		</p>
+		<p>This website is to get track of my albums and bands in my
+			collection and who I want to keep track of</p>
+		<br>
+		<p>Below is a table of some of my favorite albums by genre of records I own</p>
+
+		<!-- <span th:text="${#aggregates.avg(review.![score])}" /> -->
+
+		<div id="displaytable" th:class="placeholder">
+			<table id="displaytable2" width="100%" cellpadding="1"
+				cellspacing="0" border="3">
+				<tr align="center">
+					<td class="lbl">Rock</td>
+					<td class="lbl">Metal</td>
+					<td class="lbl">Rap</td>
+					<td class="lbl">Jazz</td>
+				</tr>
+				<tr>
+					<td><img
+						src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91tEIFtIz4L._UF1000,1000_QL80_.jpg"
+						width="100"></td>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/3/32/IronMaiden_NumberOfBeast.jpg"
+						width="100"></td>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/0/07/ATCQtheanthology.jpg"
+						width="100"></td>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/6/66/Weather_Report-Heavy_Weather.jpg"
+						width="100"></td>
+				</tr>
+				<tr>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/2/27/Real_Talk_Man_Overboard.jpg"
+						width="100"></td>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/b/b2/Metallica_-_Master_of_Puppets_cover.jpg"
+						width="100"></td>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/2/2c/AqueminiOutKast.jpg"
+						width="100"></td>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/5/54/Herbie-Hancock-Head-Hunters.png"
+						width="100"></td>
+				</tr>
+				<tr>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/b/b0/Motion_City_Soundtrack_-_I_Am_the_Movie_cover.jpg"
+						width="100"></td>
+					<td><img
+						src="https://media.pitchfork.com/photos/5929b53313d197565213ac14/1:1/w_600/d0f32fc9.jpeg"
+						width="100"></td>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/5/53/Wu-TangClanEntertheWu-Tangalbumcover.jpg"
+						width="100"></td>
+					<td><img
+						src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Coltrane_Giant_Steps.jpg/220px-Coltrane_Giant_Steps.jpg"
+						width="100"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="center">
+			<div>
+				<input type="button" id="clickme" class="button" value="Show/Hide" />
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" th:src="@{/js/myScript.js/}"></script>
+
+</body>
+
+</html>
